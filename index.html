@@ -599,10 +599,11 @@
         ...u32(size),
         ...u32(size),
         ...u16(nameBytes.length),
-        0,0, 0,0, 0,0,
-        0,0,0,0,
-        0,0,0,0,
-        ...u16(0),
+        0,0,         // extra field length
+        0,0,         // file comment length
+        0,0,         // disk number start
+        0,0,         // internal file attributes
+        0,0,0,0,     // external file attributes
         ...u32(offset),
         ...nameBytes,
       ]);
